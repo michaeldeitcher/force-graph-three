@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/force-graph-three/static/css/main.60f53119.chunk.css",
+    "main.css": "/force-graph-three/static/css/main.995ef59b.chunk.css",
     "main.js": "/force-graph-three/static/js/main.ca3a67ca.chunk.js",
     "main.js.map": "/force-graph-three/static/js/main.ca3a67ca.chunk.js.map",
     "runtime-main.js": "/force-graph-three/static/js/runtime-main.3ba7aa81.js",
@@ -9,16 +9,16 @@
     "static/js/2.4398b0ba.chunk.js": "/force-graph-three/static/js/2.4398b0ba.chunk.js",
     "static/js/2.4398b0ba.chunk.js.map": "/force-graph-three/static/js/2.4398b0ba.chunk.js.map",
     "index.html": "/force-graph-three/index.html",
-    "precache-manifest.46277524aa97d32ae93f248b4f6075ef.js": "/force-graph-three/precache-manifest.46277524aa97d32ae93f248b4f6075ef.js",
+    "precache-manifest.fcf0d9325c127d4ad894e8cb8861db1a.js": "/force-graph-three/precache-manifest.fcf0d9325c127d4ad894e8cb8861db1a.js",
     "service-worker.js": "/force-graph-three/service-worker.js",
     "static/css/2.6a906a3b.chunk.css.map": "/force-graph-three/static/css/2.6a906a3b.chunk.css.map",
-    "static/css/main.60f53119.chunk.css.map": "/force-graph-three/static/css/main.60f53119.chunk.css.map"
+    "static/css/main.995ef59b.chunk.css.map": "/force-graph-three/static/css/main.995ef59b.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.3ba7aa81.js",
     "static/css/2.6a906a3b.chunk.css",
     "static/js/2.4398b0ba.chunk.js",
-    "static/css/main.60f53119.chunk.css",
+    "static/css/main.995ef59b.chunk.css",
     "static/js/main.ca3a67ca.chunk.js"
   ]
 }
