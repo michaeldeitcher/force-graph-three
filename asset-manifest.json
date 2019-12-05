@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/force-graph-three/static/css/main.b100e6da.chunk.css",
-    "main.js": "/force-graph-three/static/js/main.59529f56.chunk.js",
-    "main.js.map": "/force-graph-three/static/js/main.59529f56.chunk.js.map",
+    "main.js": "/force-graph-three/static/js/main.5492b25e.chunk.js",
+    "main.js.map": "/force-graph-three/static/js/main.5492b25e.chunk.js.map",
     "runtime-main.js": "/force-graph-three/static/js/runtime-main.3ba7aa81.js",
     "runtime-main.js.map": "/force-graph-three/static/js/runtime-main.3ba7aa81.js.map",
-    "static/js/2.30fd22e0.chunk.js": "/force-graph-three/static/js/2.30fd22e0.chunk.js",
-    "static/js/2.30fd22e0.chunk.js.map": "/force-graph-three/static/js/2.30fd22e0.chunk.js.map",
+    "static/js/2.72c19f21.chunk.js": "/force-graph-three/static/js/2.72c19f21.chunk.js",
+    "static/js/2.72c19f21.chunk.js.map": "/force-graph-three/static/js/2.72c19f21.chunk.js.map",
     "index.html": "/force-graph-three/index.html",
-    "precache-manifest.22a9afa559e61e64a8d04b7e0b16eb81.js": "/force-graph-three/precache-manifest.22a9afa559e61e64a8d04b7e0b16eb81.js",
+    "precache-manifest.8a83b301d262ad9dd6514fcb3ec076fa.js": "/force-graph-three/precache-manifest.8a83b301d262ad9dd6514fcb3ec076fa.js",
     "service-worker.js": "/force-graph-three/service-worker.js",
     "static/css/main.b100e6da.chunk.css.map": "/force-graph-three/static/css/main.b100e6da.chunk.css.map",
     "static/media/logo.svg": "/force-graph-three/static/media/logo.25bf045c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3ba7aa81.js",
-    "static/js/2.30fd22e0.chunk.js",
+    "static/js/2.72c19f21.chunk.js",
     "static/css/main.b100e6da.chunk.css",
-    "static/js/main.59529f56.chunk.js"
+    "static/js/main.5492b25e.chunk.js"
   ]
 }
