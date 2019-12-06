@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "869484a69f2f7a8d337c3c6242868de5",
+    "revision": "2b35ceed494de23ffc92558cba82f1b7",
     "url": "/force-graph-three/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/force-graph-three/static/css/2.6a906a3b.chunk.css"
   },
   {
-    "revision": "718da939d6de5f90e437",
+    "revision": "0ff6a3885ab2fe750444",
     "url": "/force-graph-three/static/css/main.f2915c53.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/force-graph-three/static/js/2.f6955aaa.chunk.js"
   },
   {
-    "revision": "718da939d6de5f90e437",
-    "url": "/force-graph-three/static/js/main.109d013f.chunk.js"
+    "revision": "0ff6a3885ab2fe750444",
+    "url": "/force-graph-three/static/js/main.3351b4be.chunk.js"
   },
   {
     "revision": "55408d3aafff9b2a91dc",
