@@ -6,8 +6,10 @@ class Camera {
         this.renderer = renderer;
         this.scene = scene;
         this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-        this.camera.position.z = 500;
+        this.camera.position.z = 1000;
         this.controls = new OrbitControls( this.camera, this.renderer.domElement );  
+        this.controls.target = new THREE.Vector3(0, 0, 0);
+        this.controls.maxDistance = 5000;
         
         let onResize = () => {
             this.camera.aspect = window.innerWidth / window.innerHeight;

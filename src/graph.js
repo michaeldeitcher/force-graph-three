@@ -80,7 +80,7 @@ class GraphNode {
           forceSize += (distance - springLength * springStrength);
         }
         apart.normalize();
-        apart.multiplyScalar(forceSize/100);        
+        apart.multiplyScalar(forceSize/2);        
         if(node !== ignore && !node.pinned) node.pos.add(apart);
         if(other !== ignore && !other.pinned) other.pos.sub(apart);      
       }

@@ -2,5 +2,10 @@
     position: absolute;
     bottom: 0;
     z-index: 1;   
-    margin: 20px; 
+    margin: 20px;
+}
+
+.switch label{
+    color: black;
+    padding: 20px; 
 }
