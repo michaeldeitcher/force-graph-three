@@ -9,6 +9,7 @@ class GraphNode {
       const z = 1;//10 * Math.random() * -4;
       this.pos = new THREE.Vector3( x, y, z ); 
       this.id = idIndex;
+      this.pinned = false;
       this.collapsed = false;
       this.enabled = true;
       this.parent = null;
@@ -46,7 +47,7 @@ class GraphNode {
 
   function everyChild( graph, callback ) {
     for(let node of graph.edges) {
-      if( node != graph.parent) {
+      if( node !== graph.parent) {
         everyChild(node, callback);
         callback(node);
       }
@@ -80,8 +81,8 @@ class GraphNode {
         }
         apart.normalize();
         apart.multiplyScalar(forceSize/100);        
-        if(node != ignore) node.pos.add(apart);
-        if(other != ignore) other.pos.sub(apart);      
+        if(node !== ignore && !node.pinned) node.pos.add(apart);
+        if(other !== ignore && !other.pinned) other.pos.sub(apart);      
       }
     }
   }

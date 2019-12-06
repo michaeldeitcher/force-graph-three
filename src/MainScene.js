@@ -1,7 +1,8 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GraphNode, treeGraph, forceDirected, everyEdge, everyNode, everyChild } from './graph.js'
+import Camera from './Camera'
 import { inherits } from 'util';
+import simpleStore from './simpleStore';
 
 
 let graph, scene, camera, renderer, controls, circles;
@@ -9,19 +10,16 @@ function init() {
   graph = treeGraph(4,4);
 
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
 
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight );
   document.getElementsByTagName("body")[0].setAttribute("style", "margin: 0;");
   renderer.domElement.setAttribute("style", "position: absolute; top: 0; left: 0;");
   document.body.appendChild( renderer.domElement );
+  camera = new Camera({renderer,scene});
 
-  controls = new OrbitControls( camera, renderer.domElement );
   circles = [];
-
   everyNode(graph, addToScene);
-  camera.position.z = 500;
   animate();
 }
 
@@ -149,7 +147,7 @@ function mouseFromEvent( event ) {
 
 let raycaster = new THREE.Raycaster();
 function everyRaycastIntersect( mouse, callback ) {
-  raycaster.setFromCamera( mouse, camera );
+  raycaster.setFromCamera( mouse, camera.camera );
 
   let intersects = raycaster.intersectObjects( scene.children );
   let intersect = intersects.filter(item => item.object.node != null )[0];
@@ -169,12 +167,12 @@ let plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(5000, 5000, 8, 8),
 let dragging = null;
 function onMouseDown( event ) {
   let mouse = mouseFromEvent( event );
-  controls.enabled = true;
+  camera.controls.enabled = true;
   everyRaycastIntersect(mouse, (node, position) => {
     plane.position.copy(position);
     plane.lookAt(camera.position);  
     dragging = node;
-    controls.enabled = false;
+    camera.controls.enabled = false;
   });
 }
 function onMouseUp( event ) {
@@ -187,10 +185,11 @@ function onMouseMove( event ) {
   let mouse = mouseFromEvent( event );
   mouseMove = mouse;  
   if(dragging) {
-    raycaster.setFromCamera( mouse, camera );
+    raycaster.setFromCamera( mouse, camera.camera );
     let intersect = raycaster.intersectObject( plane )[0];  
     if(intersect){
       dragging.pos.copy(intersect.point);
+      dragging.pinned = simpleStore.pinNodeEnabled;
     }
   }
 }
@@ -203,15 +202,7 @@ document.addEventListener( 'dblclick', onMouseDblClick, false );
 
 document.addEventListener( 'touchstart', event => onMouseDown(event.changedTouches[0]), false );
 document.addEventListener( 'touchmove', event => onMouseMove(event.changedTouches[0]), false );
-document.addEventListener( 'touchend', event => onMouseUp(event.changedTouches[0]), false );
-
-function onResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-window.addEventListener( 'resize', onResize, false );  
+document.addEventListener( 'touchend', event => onMouseUp(event.changedTouches[0]), false ); 
 
 let lastHoveredNode = null;
 function animate() {
@@ -233,9 +224,7 @@ function animate() {
   for(let circle of circles) {
     circle.lookAt(camera.position);
   }
-  controls.update();
-
-  renderer.render( scene, camera );
+  camera.update();
 }
 
 export default init
